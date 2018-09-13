@@ -9,14 +9,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="./js/main.js"></script>
 </head>
 <body>
+
+   <?php include_once('./templates/header.php') ;?>
   <br><br>
       <div class="container">
         <div class="row">
             <div class="col-md-4">
               <div class="card mx-auto" style="width: 18rem;">
-                <img class="card-img-top mx-auto" style="width:60%;"src="user.png" alt="userImage">
+                <img class="card-img-top mx-auto" style="width:60%;margin-top:10px;"src="./images/user1.jpg" alt="userImage">
                 <div class="card-body">
                   <h5 class="card-title">Profile Info</h5>
                   <p class="card-text"><i class="fa fa-user">&nbsp;</i>Avinash kumar</p>
@@ -56,7 +59,7 @@
               <div class="card-body">
                  <h5 class="card-title">Categories</h5>
                   <p class="card-text">Here you can manages categories and you can add parent and sub categories.</p>
-                  <a href="#" class="btn btn-primary">New</a>
+                  <a id="add_cat" href="#" data-toggle="modal" data-target="#form_category" class="btn btn-primary">Add</a>
                   <a href="#" class="btn btn-primary">Manage</a>
               </div>
             </div>
@@ -66,7 +69,7 @@
               <div class="card-body">
                  <h5 class="card-title">Brands</h5>
                   <p class="card-text">Here you can manages brand and you and new brands.</p>
-                  <a href="#" class="btn btn-primary">New</a>
+                  <a id="add_brand" href="#"data-toggle="modal" data-target="#form_brand" class="btn btn-primary">Add</a>
                   <a href="#" class="btn btn-primary">Manage</a>
               </div>
             </div>
@@ -76,13 +79,25 @@
               <div class="card-body">
                  <h5 class="card-title">Products</h5>
                   <p class="card-text">Here you can manages product and you add new products.</p>
-                  <a href="#" class="btn btn-primary">New</a>
+                  <a id="add_prod" href="#" data-toggle="modal" data-target="#form_product" class="btn btn-primary">Add</a>
                   <a href="#" class="btn btn-primary">Manage</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <?php
+      //category form 
+      include_once('./templates/category_modal.php');?>
+
+       <?php
+      //category form 
+      include_once('./templates/brand_modal.php');?>
+
+       <?php
+      //category form 
+      include_once('./templates/product_modal.php');?>
  
 </body>
 </html>
